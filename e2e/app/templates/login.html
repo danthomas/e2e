@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <input id='username' type="text" ng-model="model.username" />
+    <input id='password' type="text" ng-model="model.password" />
+    <input id='login' type="button" ng-click="model.login()" />
+
+    <label id="errorMessage">{{model.errorMessage}}</label>
+</body>
+</html>
