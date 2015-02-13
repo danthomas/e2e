@@ -63,6 +63,9 @@
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\login.html" />
     <Content Include="node_modules\angular-mocks\angular-mocks.js" />
+    <Content Include="node_modules\angular-scenario\angular-scenario.js" />
+    <Content Include="node_modules\angular-scenario\jstd-scenario-adapter-config.js" />
+    <Content Include="node_modules\angular-scenario\jstd-scenario-adapter.js" />
     <Content Include="tests\common.js" />
     <Content Include="tests\conf.js" />
     <Content Include="tests\loginPage_spec.js" />
@@ -2813,6 +2816,9 @@
     <Content Include="node_modules\angular-mocks\bower.json" />
     <Content Include="node_modules\angular-mocks\package.json" />
     <Content Include="node_modules\angular-mocks\README.md" />
+    <Content Include="node_modules\angular-scenario\bower.json" />
+    <Content Include="node_modules\angular-scenario\package.json" />
+    <Content Include="node_modules\angular-scenario\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

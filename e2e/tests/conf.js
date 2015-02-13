@@ -1,6 +1,6 @@
 // An example configuration file.
 exports.config = {
-  directConnect: true,
+  //directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
@@ -15,5 +15,8 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
-  }
+  },
+  rootElement: "#ngAppRootElement",
+  allScriptsTimeout: 11000,
+  baseUrl: "http://localhost:3000"
 };

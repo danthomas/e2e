@@ -2,8 +2,6 @@
 
     "use strict";
 
-    //var testHelper = require("../../Common/TestHelper.js");
-
     var loginPage = function () {
 
         this.username = element(by.id('username'));
