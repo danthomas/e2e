@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\appE2E.js" />
+    <Content Include="e2eSpecs\appE2E.js" />
     <Content Include="app\Index.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\login.html" />
@@ -66,9 +66,9 @@
     <Content Include="node_modules\angular-scenario\angular-scenario.js" />
     <Content Include="node_modules\angular-scenario\jstd-scenario-adapter-config.js" />
     <Content Include="node_modules\angular-scenario\jstd-scenario-adapter.js" />
-    <Content Include="tests\common.js" />
-    <Content Include="tests\conf.js" />
-    <Content Include="tests\loginPage_spec.js" />
+    <Content Include="e2eSpecs\common.js" />
+    <Content Include="e2eSpecs\conf.js" />
+    <Content Include="e2eSpecs\loginPage_spec.js" />
     <Content Include="node_modules\angular-route\angular-route.js" />
     <Content Include="node_modules\angular-route\angular-route.min.js" />
     <Content Include="node_modules\angular\angular-csp.css" />
@@ -1984,7 +1984,15 @@
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\range-parser\index.js" />
     <Content Include="node_modules\serve-static\node_modules\utils-merge\index.js" />
     <Content Include="server.js" />
-    <Content Include="tests\loginPage.js" />
+    <Content Include="e2eSpecs\loginPage.js" />
+    <Content Include="specs\lib\jasmine-2.2.0\boot.js" />
+    <Content Include="specs\lib\jasmine-2.2.0\console.js" />
+    <Content Include="specs\lib\jasmine-2.2.0\jasmine-html.js" />
+    <Content Include="specs\lib\jasmine-2.2.0\jasmine.css" />
+    <Content Include="specs\lib\jasmine-2.2.0\jasmine.js" />
+    <Content Include="specs\lib\jasmine-2.2.0\jasmine_favicon.png" />
+    <Content Include="specs\SpecRunner.html" />
+    <Content Include="specs\specs.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2826,6 +2834,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
