@@ -1989,6 +1989,7 @@
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\on-finished\node_modules\ee-first\index.js" />
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\range-parser\index.js" />
     <Content Include="node_modules\serve-static\node_modules\utils-merge\index.js" />
+    <Content Include="repository.js" />
     <Content Include="server.js" />
     <Content Include="e2eSpecs\loginPage.js" />
     <Content Include="specs\lib\jasmine-2.2.0\boot.js" />
@@ -2841,7 +2842,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="db\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
