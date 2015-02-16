@@ -57,11 +57,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\all.min.js" />
     <Content Include="app\app.js" />
+    <Content Include="app\appController.js" />
+    <Content Include="app\homeController.js" />
+    <Content Include="app\loginController.js" />
+    <Content Include="app\loginService.js" />
     <Content Include="e2eSpecs\appE2E.js" />
     <Content Include="app\Index.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\login.html" />
+    <Content Include="gulpfile.js" />
     <Content Include="node_modules\angular-mocks\angular-mocks.js" />
     <Content Include="node_modules\angular-scenario\angular-scenario.js" />
     <Content Include="node_modules\angular-scenario\jstd-scenario-adapter-config.js" />
@@ -2827,6 +2833,7 @@
     <Content Include="node_modules\angular-scenario\bower.json" />
     <Content Include="node_modules\angular-scenario\package.json" />
     <Content Include="node_modules\angular-scenario\README.md" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
