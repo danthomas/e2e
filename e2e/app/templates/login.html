@@ -4,10 +4,12 @@
     <title>Login</title>
 </head>
 <body>
-    <input id='username' type="text" ng-model="model.username" />
-    <input id='password' type="text" ng-model="model.password" />
-    <input id='login' type="button" ng-click="model.login()" />
+    <form name="form" ng-submit="model.login(form.$valid)">
+        <input id="username" name="username" type="text" ng-model="model.username" required />
+        <input id="password" name="password" type="text" ng-model="model.password" required />
+        <input id="login" type="button" />
 
-    <label id="errorMessage">{{model.errorMessage}}</label>
+        <label id="errorMessage">{{model.errorMessage}}</label>
+    </form>
 </body>
 </html>

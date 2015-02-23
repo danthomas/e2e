@@ -1,18 +1,24 @@
 ﻿
-app.service('loginService', function ($http, $location) {
+app.service('loginService', function ($http, $location, $rootScope) {
 
-    this.login = function (username, password, callback) {
+    this.init = function() {
+        $rootScope.loggedInUser = null;
+    };
 
-        if (username === '' || password === '') {
+    this.login = function (accountName, password, callback) {
+
+        if (accountName === '' || password === '') {
             callback({ success: false, errorMessage: 'Please enter a Username & Password.' });
         } else {
 
             $http({
-                method: "GET",
-                url: 'api/login',
-                params: { username: username, password: password }
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                url: 'http://localhost:3000/api/login',
+                data: JSON.stringify({ accountName: accountName, password: password })
             }).success(function (responseData) {
                 if (responseData.success) {
+                    $rootScope.loggedInUser = accountName;
                     $location.url('/home');
                 } else {
                     callback({ success: false, errorMessage: 'Username & Password not recognised.' });

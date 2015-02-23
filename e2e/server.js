@@ -1,64 +1,36 @@
 ﻿var express = require('express');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
-var Repository = require('./repository.js');
+var AccountController = require('./server/controllers/accountController.js');
+var Repository = require('./server/repository.js');
 
 
 var app = express()
-    .use(bodyParser.json())
     .use(serveStatic(__dirname + '/app'))
     .use(serveStatic(__dirname + '/e2eSpecs')) //only required for testing
     .use(serveStatic(__dirname + '/node_modules'))
+    .use(bodyParser.json())
 
     .use(function (req, res) {
 
+        if (req.path === '/api/login') {
 
-        var repository = new Repository();
+            var accountController = new AccountController(new Repository());
 
-        if (req.path === '/login') {
+            accountController.login(req.body.accountName, req.body.password, function(success) {
 
-            var account = repository.getAccount(req.body.accountName);
+                console.log('login callback');
 
-            res.end('{success: ' + (account == null ? 'false' : 'true') + '}');
-            return;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: success }));
+            });
+
+        } else {
+            res.end('error ' + req.path);
         }
 
-        if (req.body.foo) {
-
-
-            repository.addAccount('asdfdf', 'asdfasdf');
-
-            //res.end(testing());
-        }
-        else {
-            res.end('Body does not have foo!');
-        }
     })
     .use(function (err, req, res, next) {
         res.end('Invalid body!');
     })
     .listen(3000);
-/*
-
-var testing = function () {
-
-    var account = { username: 'thomasd', password: 'password' };
-    //var findKey = { name: 'John' };
-    MongoClient.connect('mongodb://127.0.0.1:27017/e2e', function(err, db) {
-        if (err) throw err;
-        console.log('Successfully connected');
-        var collection = db.collection('account');
-        collection.insert(account, function(err, docs) {
-            console.log('Inserted', docs[0]);
-            console.log('ID:', account._id);
-//            collection.find(findKey).toArray(function(err, results) {
-//                console.log('Found results:', results);
-//                collection.remove(findKey, function(err, results) {
-//                    console.log('Deleted person');
-//                    db.close();
-//                });
-//            });
-        });
-    });
-};
-*/

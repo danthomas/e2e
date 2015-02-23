@@ -7,5 +7,13 @@ app.config(function ($routeProvider) {
     }).when('/home', {
         templateUrl: 'templates/home.html',
         controller: 'homeController'
+    }).otherwise({
+        redirectTo: '/home'
     });
-});
+}).run(function ($rootScope, $location) {
+    $rootScope.$on("$routeChangeStart", function () {
+        if ($rootScope.loggedInUser == null) {
+            $location.path("/login");
+        }
+    });
+});;

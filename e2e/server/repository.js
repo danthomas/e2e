@@ -1,6 +1,8 @@
 ﻿(function () {
     "use strict";
 
+    var connectionString = 'mongodb://127.0.0.1:27017/e2e';
+
     var repository = function () {
 
         this.MongoClient = require('mongodb').MongoClient;
@@ -9,7 +11,7 @@
 
             var account = { accountname: accountname, password: password };
 
-            this.MongoClient.connect('mongodb://127.0.0.1:27017/e2e', function (err, db) {
+            this.MongoClient.connect('connectionString', function (err, db) {
                 if (err) throw err;
 
                 var collection = db.collection('account');
@@ -17,30 +19,31 @@
                 collection.insert(account, function (err, docs) {
 
                 });
-
-                db.close();
             });
         };
 
-        this.getAccount = function (accountName) {
-            this.MongoClient.connect('mongodb://127.0.0.1:27017/e2e', function (err, db) {
+        this.getAccountByAccountName = function(accountName, cb) {
+
+            this.MongoClient.connect(connectionString, function (err, db) {
                 if (err) throw err;
 
                 var collection = db.collection('account');
 
-                collection.find({ accountName: accountName }).toArray(function (err, results) {
+                collection.find({ accountName: accountName }).toArray(function(err, results) {
                     if (err) throw err;
 
-
                     if (results.length === 0) {
-                        return null;
+                        cb(null);
                     } else {
-                        return results[0];
+                        cb(results[0]);
                     }
                 });
-                db.close();
             });
-        }
+        };
+
+        this.getAccounts = function(cb) {
+
+        };
     };
 
     module.exports = repository;

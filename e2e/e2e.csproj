@@ -60,11 +60,12 @@
     <Content Include="app\all.min.js" />
     <Content Include="app\app.js" />
     <Content Include="app\appController.js" />
+    <Content Include="app\backendService.js" />
     <Content Include="app\homeController.js" />
     <Content Include="app\loginController.js" />
     <Content Include="app\loginService.js" />
     <Content Include="e2eSpecs\appE2E.js" />
-    <Content Include="app\Index.html" />
+    <Content Include="app\index.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\login.html" />
     <Content Include="gulpfile.js" />
@@ -1989,7 +1990,8 @@
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\on-finished\node_modules\ee-first\index.js" />
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\range-parser\index.js" />
     <Content Include="node_modules\serve-static\node_modules\utils-merge\index.js" />
-    <Content Include="repository.js" />
+    <Content Include="server\controllers\accountController.js" />
+    <Content Include="server\repository.js" />
     <Content Include="server.js" />
     <Content Include="e2eSpecs\loginPage.js" />
     <Content Include="specs\lib\jasmine-2.2.0\boot.js" />
@@ -1998,8 +2000,8 @@
     <Content Include="specs\lib\jasmine-2.2.0\jasmine.css" />
     <Content Include="specs\lib\jasmine-2.2.0\jasmine.js" />
     <Content Include="specs\lib\jasmine-2.2.0\jasmine_favicon.png" />
-    <Content Include="specs\SpecRunner.html" />
-    <Content Include="specs\specs.js" />
+    <Content Include="specs\server\controllers\accountController.spec.js" />
+    <Content Include="specs\specs.spec.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2835,6 +2837,7 @@
     <Content Include="node_modules\angular-scenario\package.json" />
     <Content Include="node_modules\angular-scenario\README.md" />
     <Content Include="package.json" />
+    <Content Include="jasmine.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
