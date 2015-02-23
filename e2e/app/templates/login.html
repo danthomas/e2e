@@ -4,10 +4,10 @@
     <title>Login</title>
 </head>
 <body>
-    <form name="form" ng-submit="model.login(form.$valid)">
+    <form name="form" ng-submit="model.login(form.$valid)" novalidate>
         <input id="username" name="username" type="text" ng-model="model.username" required />
-        <input id="password" name="password" type="text" ng-model="model.password" required />
-        <input id="login" type="button" />
+        <input id="password" name="password" type="password" ng-model="model.password" required />
+        <input id="login" type="submit" value="Login" ng-disabled="form.$invalid"/>
 
         <label id="errorMessage">{{model.errorMessage}}</label>
     </form>

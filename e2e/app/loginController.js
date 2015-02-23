@@ -3,9 +3,10 @@
     loginService.init();
 
     $scope.model = {
-        username: '',
-        password: '',
+        username: 'thomasd',
+        password: 'password',
         login: function (isValid) {
+            console.log(isValid);
             if (isValid) {
                 loginService.login($scope.model.username, $scope.model.password, function (ret) {
                     if (ret.success) {

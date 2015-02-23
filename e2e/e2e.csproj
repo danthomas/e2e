@@ -2847,6 +2847,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="db\" />
+    <Folder Include="scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

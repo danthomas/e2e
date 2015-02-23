@@ -1,1 +1,60 @@
-﻿home
+﻿{{startDate}}
+<br />
+{{duration}}
+<br />
+{{form.$valid}}
+<br />
+required : {{required}}
+<br />
+
+<form name="form" ng-submit="submit(form.$valid)" novalidate>
+    <div>
+        <div class="row">
+            <div class="col-md-2">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="startDate" is-open="opened"
+                        datepicker-options="{ startingDay: 1 }" ng-required="true" close-text="Close" show-button-bar="false" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2">
+                <p class="input-group">
+
+                    <timepicker ng-model="startDate" hour-step="1" minute-step="15" show-meridian="false"></timepicker>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <p class="input-group">
+
+                    <timepicker ng-model="duration" hour-step="1" minute-step="15" show-meridian="false" duration-range ></timepicker>
+                </p>
+            </div>
+        </div>
+        <div>
+            <input type="text" ng-model="detail" ng-required="required" />
+        </div>
+
+        <div>
+            <input type="checkbox" ng-model="required" />
+        </div>
+
+    </div>
+    <input id="login" type="submit" value="Login" ng-disabled="form.$invalid" />
+
+    <ul>
+        <li ng-repeat="(key, errors) in form.$error track by $index"><strong>{{ key }}</strong> errors
+    <ul>
+        <li ng-repeat="e in errors">{{ e.$name }} has an error: <strong>{{ key }}</strong>.</li>
+    </ul>
+        </li>
+    </ul>
+</form>

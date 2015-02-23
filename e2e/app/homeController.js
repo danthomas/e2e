@@ -1,7 +1,49 @@
-﻿app.controller('homeController', function ($scope, loginService) {
-    $scope.name = 'Superhero';
-    $scope.counter = 0;
-    $scope.$watch('name', function (newValue, oldValue) {
-        $scope.counter = $scope.counter + 1;
-    });
+﻿app.controller('homeController', function ($scope) {
+
+    $scope.required = true;
+    $scope.startDate = new Date();
+    $scope.duration = new Date();
+
+    $scope.duration.setHours(1);
+    $scope.duration.setMinutes(0);
+    $scope.duration.setSeconds(0);
+    
+    $scope.open = function ($event) {
+
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened = true;
+    };
+
+    $scope.submit = function(isValid) {
+        
+    }
+});
+
+app.directive('durationRange', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            ngModel.$validators.durationRangeValidator = function (value, other) {
+                console.log(value);
+                console.log(other);
+                return value.getHours() < 6;
+            }
+        }
+    }
+});
+
+app.directive('datepickerPopup', function (dateFilter, datepickerPopupConfig) {
+    return {
+        restrict: 'A',
+        priority: 1,
+        require: 'ngModel',
+        link: function (scope, element, attr, ngModel) {
+            var dateFormat = attr.datepickerPopup || datepickerPopupConfig.datepickerPopup;
+            ngModel.$formatters.push(function (value) {
+                return dateFilter(value, dateFormat);
+            });
+        }
+    };
 });
