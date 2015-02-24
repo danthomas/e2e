@@ -1990,6 +1990,7 @@
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\on-finished\node_modules\ee-first\index.js" />
     <Content Include="node_modules\serve-static\node_modules\send\node_modules\range-parser\index.js" />
     <Content Include="node_modules\serve-static\node_modules\utils-merge\index.js" />
+    <Content Include="scripts\ui-bootstrap-tpls-0.12.1.min.js" />
     <Content Include="server\controllers\accountController.js" />
     <Content Include="server\repository.js" />
     <Content Include="server.js" />
@@ -2838,6 +2839,7 @@
     <Content Include="node_modules\angular-scenario\README.md" />
     <Content Include="package.json" />
     <Content Include="jasmine.bat" />
+    <Content Include="app\tags.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2847,7 +2849,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="db\" />
-    <Folder Include="scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

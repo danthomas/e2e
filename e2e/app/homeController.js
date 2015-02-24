@@ -1,13 +1,16 @@
-﻿app.controller('homeController', function ($scope) {
+﻿app.controller('homeController', function ($scope, $http) {
 
     $scope.required = true;
     $scope.startDate = new Date();
     $scope.duration = new Date();
 
+    $scope.startDate.setMinutes(0);
+    $scope.startDate.setSeconds(0);
+
     $scope.duration.setHours(1);
     $scope.duration.setMinutes(0);
     $scope.duration.setSeconds(0);
-    
+
     $scope.open = function ($event) {
 
         $event.preventDefault();
@@ -17,8 +20,12 @@
     };
 
     $scope.submit = function(isValid) {
-        
-    }
+
+    };
+
+    $scope.loadTags = function (query) {
+        return $http.get('tags.json');
+    };
 });
 
 app.directive('durationRange', function () {
